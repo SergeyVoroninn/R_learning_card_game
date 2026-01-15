@@ -13,13 +13,13 @@ if __name__=='__main__':
         # кол-во эпизодов обучения (не трогать)
         # таргетное обучение. num_episodes на каждое состояние
         # метод обучения - e-greedy 
-        'alpha':0.1, # скорость обучения, множитель который формирует величину значения при заполнением результатом (типо чтобы большие цифры по политике не формировались)
+        'alpha':0.4, # скорость обучения, множитель который формирует величину значения при заполнением результатом (типо чтобы большие цифры по политике не формировались)
         # Optimal values (typically small, e.g., 0.01 to 0.5)
-        'gamma':0.8, # по сути это множитель который уменьшает или увеличивает награду на следующем шаге.
+        'gamma':0.6, # по сути это множитель который уменьшает или увеличивает награду на следующем шаге.
         # от 0 до 1
         # ближе к 1 - принимает решения на основе награды в долгострочном режиме
         # ближе к 0 - принимает решения на основе моментальных наград
-        'epsilon_mode' : 2
+        'epsilon_mode' : 1
         # ОПИСАНИЕ ПОМЕНЯТЬ)
         # 'epsilon':1 # скорость обучения
         # 1 - по умолчанию на рандоме исследует все возможности
@@ -32,7 +32,9 @@ if __name__=='__main__':
         hyper_parametrs['epsilon_mode']
     )
     exemplar.write_q_policity('q_policy.txt')
-    # exemplar.hand_mode_operations()
-    # num_tests = 10**5
-    # print(f"RL win rate: {exemplar.test_win_rate(num_tests):.3f} over {num_tests}")
+    
+    num_tests = 10**5
+    win_rate = exemplar.test_win_rate(num_tests,hyper_parametrs['num_episodes'])
+    print(f"RL win rate: {win_rate:.3f} over {num_tests}")
+    exemplar.hand_mode_operations()
     
