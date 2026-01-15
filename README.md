@@ -9,9 +9,9 @@ The state is the current state of the environment, which is perceived by the pro
 ## About Card game
 Simulation of a card game for money. There are 26 red and 26 black cards in the 52-card deck. The player has a choice: watch the next one or open the next one and complete the game. If the face-up card is red, then the player wins.
 ## USAGE
-* `python r_project.py` - run hand-mode card game with suggestings from trained agent. 
+* `python rl_project.py` - run hand-mode card game with suggestings from trained agent. 
 ## Solution
-* Output Q-policy(the score of each decision) printing in q_policy.txt after executing r_project
+* Output Q-policy(the score of each decision) printing in q_policy.txt after executing rl_project
 ## Find Hyper parametrs
 * In work. Not ended.
 ##  Credits and Licenses:
